@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../css/common.css";
+import "../css/globals.css";
 import ParentProps from "@/types/common/ParentProps";
 import { DESCRIPTION, NAME } from "@/globals/metadata.globals";
+import Shell from "@/components/molecules/Shell";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -45,7 +46,9 @@ function RootLayout({ children }: Readonly<ParentProps>) {
     return (
         <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <body>
-                {children}
+                <Shell>
+                    {children}
+                </Shell>
             </body>
         </html>
     );

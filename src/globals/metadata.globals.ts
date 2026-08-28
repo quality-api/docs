@@ -1,4 +1,4 @@
-export const NAME = "Quality API Docs";
+export const NAME = "Quality API";
 
 export const DESCRIPTION = `
 Tired of writing Next.js endpoints from simple functions?

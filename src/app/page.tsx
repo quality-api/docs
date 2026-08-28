@@ -1,5 +1,7 @@
+import { redirect } from "next/navigation";
+
 function Page() {
-    return <></>;
+    return redirect("/docs");
 }
 
 export default Page;
