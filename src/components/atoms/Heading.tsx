@@ -23,9 +23,9 @@ function Heading({
     const Component = variant as ElementType<ComponentProps<"p">>;
 
     const className = clsx("flex items-center gap-4 group", {
-        "text-[3rem] mt-8": variant === "h1",
-        "text-[2rem] mt-6": variant === "h2",
-        "text-[1.5rem] mt-3": variant === "h3"
+        "text-[3rem] font-bold mt-8": variant === "h1",
+        "text-[2rem] font-semibold mt-6": variant === "h2",
+        "text-[1.5rem] font-medium mt-3": variant === "h3"
     }, _className);
 
     return (
