@@ -19,7 +19,7 @@ function HeaderAnchor({ href, children }: Readonly<HeaderAnchorProps>) {
     return (
         <Link
             href={href}
-            className="text-md font-medium _darken-on-hover _outline-on-focus"
+            className="text-md font-medium _darken-on-hover _outline-on-focus transition-all"
             style={{ color: active ? "var(--color-primary)" : undefined }}>
             {children}
         </Link>

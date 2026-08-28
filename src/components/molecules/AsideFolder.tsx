@@ -27,7 +27,7 @@ function AsideFolder({ defaultOpen = false, name, children }: Readonly<AsideFold
                 onClick={() => toggle()}
                 aria-controls={collapsibleId}
                 aria-expanded={show}
-                className="w-full p-2 font-medium flex items-center gap-2 cursor-pointer _outline-on-focus _darken-on-hover">
+                className="w-full p-2 font-medium flex items-center gap-2 cursor-pointer _outline-on-focus _darken-on-hover transition-all">
                 {name}
 
                 <Chevron direction={show ? "down" : "right"} />

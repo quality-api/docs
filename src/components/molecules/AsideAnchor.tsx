@@ -17,7 +17,7 @@ function AsideAnchor({ href, children }: Readonly<AsideAnchorProps>) {
     return (
         <Link
             href={href}
-            className="p-2 font-medium block _outline-on-focus _darken-on-hover"
+            className="p-2 font-medium block _outline-on-focus _darken-on-hover transition-all"
             style={{ color: isActive ? "var(--color-primary)" : undefined }}>
             {children}
         </Link>

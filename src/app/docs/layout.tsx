@@ -24,6 +24,10 @@ function Layout({ children }: Readonly<ParentProps>) {
                         <AsideAnchor href="/docs/prerequisites">
                             Prerequisites
                         </AsideAnchor>
+
+                        <AsideAnchor href="/docs/quick-start">
+                            Quick start
+                        </AsideAnchor>
                     </AsideFolder>
                 </nav>
             </Aside>
