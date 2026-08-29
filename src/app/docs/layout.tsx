@@ -29,6 +29,12 @@ function Layout({ children }: Readonly<ParentProps>) {
                             Quick start
                         </AsideAnchor>
                     </AsideFolder>
+
+                    <AsideFolder name="More">
+                        <AsideAnchor href="/docs/builder-pattern">
+                            Builder pattern
+                        </AsideAnchor>
+                    </AsideFolder>
                 </nav>
             </Aside>
 
