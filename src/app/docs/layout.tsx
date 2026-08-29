@@ -1,10 +1,8 @@
-import Aside from "@/components/organisms/Aside";
 import AsideFolder from "@/components/molecules/AsideFolder";
 import AsideAnchor from "@/components/molecules/AsideAnchor";
 import ParentProps from "@/types/common/ParentProps";
 import { Metadata } from "next";
-import Container from "@/components/atoms/Container";
-import Footer from "@/components/organisms/Footer";
+import AsideShell from "@/components/molecules/AsideShell";
 
 export const metadata: Metadata = {
     description: "Read the official documentation here"
@@ -12,8 +10,8 @@ export const metadata: Metadata = {
 
 function Layout({ children }: Readonly<ParentProps>) {
     return (
-        <div className="h-full flex">
-            <Aside>
+        <AsideShell
+            asideChildren={
                 <nav aria-label="Sidebar navigation">
                     <AsideFolder
                         defaultOpen
@@ -37,18 +35,9 @@ function Layout({ children }: Readonly<ParentProps>) {
                         </AsideAnchor>
                     </AsideFolder>
                 </nav>
-            </Aside>
-
-            <div className="h-full grow flex flex-col overflow-auto">
-                <main className="h-fit grow p-4">
-                    <Container>
-                        {children}
-                    </Container>
-                </main>
-
-                <Footer />
-            </div>
-        </div>
+            }>
+            {children}
+        </AsideShell>
     );
 }
 
