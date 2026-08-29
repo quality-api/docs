@@ -12,8 +12,8 @@ export const GET =
         .add(authenticate)
         .end(request => {
             return Response.json({ message: "The quick brown fox" });
-    });
-`;
+        });
+`.trimStart();
 
 export const metadata: Metadata = { title: "Quick start" };
 

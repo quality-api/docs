@@ -1,6 +1,6 @@
-import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import CopyButton from "@/components/atoms/CopyButton";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type CodeblockProps = {
     code: string;
@@ -9,7 +9,7 @@ type CodeblockProps = {
 function Codeblock({ code }: Readonly<CodeblockProps>) {
     return (
         <div className="w-full h-fit relative">
-            <SyntaxHighlighter language="JavaScript1.5" style={atomOneDark}>
+            <SyntaxHighlighter language="typescript" style={vscDarkPlus}>
                 {code}
             </SyntaxHighlighter>
 
