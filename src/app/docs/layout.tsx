@@ -4,6 +4,7 @@ import AsideAnchor from "@/components/molecules/AsideAnchor";
 import ParentProps from "@/types/common/ParentProps";
 import { Metadata } from "next";
 import Container from "@/components/atoms/Container";
+import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
     description: "Read the official documentation here"
@@ -38,11 +39,15 @@ function Layout({ children }: Readonly<ParentProps>) {
                 </nav>
             </Aside>
 
-            <main className="h-full p-4 grow overflow-auto">
-                <Container>
-                    {children}
-                </Container>
-            </main>
+            <div className="h-full grow flex flex-col overflow-auto">
+                <main className="h-fit grow p-4">
+                    <Container>
+                        {children}
+                    </Container>
+                </main>
+
+                <Footer />
+            </div>
         </div>
     );
 }
