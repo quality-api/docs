@@ -85,6 +85,10 @@ p code {
     border-radius: 4px;
 }
 
+p a {
+    color: var(--color-primary);
+}
+
 code {
     font-family: Geist Mono;
 }

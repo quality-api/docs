@@ -1,3 +1,5 @@
+"use client";
+
 import { IconCopy } from "@tabler/icons-react";
 import clsx from "clsx";
 import React, { ComponentProps } from "react";
@@ -9,7 +11,7 @@ type CopyButtonProps = {
 function CopyButton({ value, className: _className, onClick: _onClick, ...restProps }: Readonly<CopyButtonProps>) {
 
     const className = clsx(
-        "w-fit h-fit p-2 bg-(--color-dark-9) rounded-sm cursor-pointer",
+        "w-fit h-fit p-2 bg-(--color-dark-9) rounded-sm cursor-pointer _outline-on-focus",
         _className
     );
 
