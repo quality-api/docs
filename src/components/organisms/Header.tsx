@@ -1,5 +1,7 @@
 import Logo from "@/components/atoms/Logo";
 import HeaderAnchor from "@/components/atoms/HeaderAnchor";
+import HeaderSocialAnchor from "@/components/atoms/HeaderSocialAnchor";
+import { IconBrandGithub, IconBrandNpm, IconBrandX } from "@tabler/icons-react";
 
 type HeaderProps = {
 
@@ -7,7 +9,7 @@ type HeaderProps = {
 
 function Header({ }: Readonly<HeaderProps>) {
     return (
-        <header className="w-full h-fit p-4 flex bg-(--color-dark-7)">
+        <header className="w-full h-fit p-4 flex justify-between items-center bg-(--color-dark-7)">
             <Logo />
 
             <nav
@@ -21,9 +23,31 @@ function Header({ }: Readonly<HeaderProps>) {
                     Assets
                 </HeaderAnchor>
 
-                <HeaderAnchor href="/">
-                    GitHub
+                <HeaderAnchor href="/release-notes">
+                    Release notes
                 </HeaderAnchor>
+            </nav>
+
+            <nav
+                aria-label="Socials"
+                className="h-fit ml-auto flex gap-8">
+                <HeaderSocialAnchor
+                    href="https://github.com/quality-api"
+                    screenreaderName="GitHub">
+                    <IconBrandGithub className="w-[1em] h-[1em]" />
+                </HeaderSocialAnchor>
+
+                <HeaderSocialAnchor
+                    href="https://www.npmjs.com/package/@quality-api/core"
+                    screenreaderName="npm">
+                    <IconBrandNpm className="w-[1em] h-[1em]" />
+                </HeaderSocialAnchor>
+
+                <HeaderSocialAnchor
+                    href="https://x.com/qualityapidev"
+                    screenreaderName="X">
+                    <IconBrandX />
+                </HeaderSocialAnchor>
             </nav>
         </header>
     );
