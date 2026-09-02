@@ -1,7 +1,7 @@
 import Logo from "@/components/atoms/Logo";
 import HeaderAnchor from "@/components/atoms/HeaderAnchor";
 import HeaderSocialAnchor from "@/components/atoms/HeaderSocialAnchor";
-import { IconBrandGithub, IconBrandNpm } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandNpm, IconBrandX } from "@tabler/icons-react";
 
 type HeaderProps = {
 
@@ -37,6 +37,12 @@ function Header({ }: Readonly<HeaderProps>) {
                     href="https://www.npmjs.com/package/@quality-api/core"
                     screenreaderName="npm">
                     <IconBrandNpm className="w-[1em] h-[1em]" />
+                </HeaderSocialAnchor>
+
+                <HeaderSocialAnchor
+                    href="https://x.com/qualityapidev"
+                    screenreaderName="X">
+                    <IconBrandX />
                 </HeaderSocialAnchor>
             </nav>
         </header>
