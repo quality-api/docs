@@ -22,6 +22,10 @@ function Header({ }: Readonly<HeaderProps>) {
                 <HeaderAnchor href="/assets">
                     Assets
                 </HeaderAnchor>
+
+                <HeaderAnchor href="/release-notes">
+                    Release notes
+                </HeaderAnchor>
             </nav>
 
             <nav
