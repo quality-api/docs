@@ -42,12 +42,6 @@ function Header({ }: Readonly<HeaderProps>) {
                     screenreaderName="npm">
                     <IconBrandNpm className="w-[1em] h-[1em]" />
                 </HeaderSocialAnchor>
-
-                <HeaderSocialAnchor
-                    href="https://x.com/qualityapidev"
-                    screenreaderName="X">
-                    <IconBrandX />
-                </HeaderSocialAnchor>
             </nav>
         </header>
     );
