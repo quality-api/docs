@@ -22,6 +22,8 @@ async function ReleaseNoteList({ }: Readonly<ReleaseNoteListProps>) {
         !lastCacheAt ||
         lastCacheAt < DateTime.now().minus({ minutes: 30 })
     ) {
+        console.log(DateTime.now().toFormat("dd.MM.yyyy HH:mm:ss") + ": " + "Refetching from GitHub API...");
+
         const response = await GITHUB_API.get<GitHub_PullRequest[]>("/repos/quality-api/quality-api.core/pulls", {
             params: { state: "closed" }
         });
