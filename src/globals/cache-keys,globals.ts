@@ -1,0 +1,2 @@
+export const RELEASE_NOTE_LIST_LAST_CACHE_AT_CACHE_KEY = "ReleaseNoteList_lastCacheAt";
+export const RELEASE_NOTE_LIST_CACHED_DATA_CACHE_KEY = "ReleaseNoteList_cachedData";
