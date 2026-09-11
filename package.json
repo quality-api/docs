@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@quality-api/core": "^0.0.9",
     "@tabler/icons-react": "^3.46.0",
     "axios": "^1.20.0",
     "clsx": "^2.1.1",
