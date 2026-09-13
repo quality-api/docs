@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import ParentProps from "@/types/common/ParentProps";
 import Link from "next/link";
+import { useEffect } from "react";
+import useAsideFolderContext from "@/contexts/anchor-folder-context/useAsideFolderContext";
 
 type AsideAnchorProps = {
     href: string;
@@ -13,6 +15,14 @@ function AsideAnchor({ href, children }: Readonly<AsideAnchorProps>) {
     const pathname = usePathname();
 
     const isActive = pathname === href;
+
+    const { setShow } = useAsideFolderContext();
+
+    useEffect(() => {
+        if (!isActive) return;
+
+        setShow(true);
+    }, [isActive]);
 
     return (
         <Link
