@@ -1,7 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 import Heading from "@/components/atoms/Heading";
 import CliTable from "@/components/organisms/CliTable";
 import Codeblock from "@/components/molecules/Codeblock";
+import SheetPageTemplate from "@/components/templates/SheetPageTemplate";
 
 const yourFirstEndpointCodeSnippet = `
 import QualityApi from "@quality-api/core";
@@ -19,9 +20,7 @@ export const metadata: Metadata = { title: "Quick start" };
 
 function Page() {
     return (
-        <div className="flex flex-col gap-2">
-            <Heading>Quick start</Heading>
-
+        <SheetPageTemplate title="Quick start">
             <p>To install and setup Quality API, simply run the following command in your command line:</p>
 
             <CliTable
@@ -47,7 +46,7 @@ function Page() {
             <p>
                 The middleware is, naturally, added in chronological order, meaning added first means executed first.
             </p>
-        </div>
+        </SheetPageTemplate>
     );
 }
 

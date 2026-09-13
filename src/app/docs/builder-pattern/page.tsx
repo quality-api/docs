@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Heading from "@/components/atoms/Heading";
 import Codeblock from "@/components/molecules/Codeblock";
+import SheetPageTemplate from '@/components/templates/SheetPageTemplate';
 
 const theWrongWayCodeSnippet = `
 import QualityApi from "@quality-api/core";
@@ -32,9 +33,7 @@ export const metadata: Metadata = { title: "Builder pattern" };
 
 function Page() {
     return (
-        <div className="flex flex-col gap-2">
-            <Heading>Builder pattern</Heading>
-
+        <SheetPageTemplate title="Builder pattern">
             <p>
                 Quality API follows a half-traditional builder pattern.
                 <br />
@@ -55,7 +54,7 @@ function Page() {
             </Heading>
 
             <Codeblock code={theRightWayCodeSnippet} />
-        </div>
+        </SheetPageTemplate>
     );
 }
 

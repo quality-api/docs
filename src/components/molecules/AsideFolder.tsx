@@ -2,8 +2,8 @@
 
 import ParentProps from "@/types/common/ParentProps";
 import { useId, useState } from "react";
-import { IconChevronRight } from "@tabler/icons-react";
 import Chevron from "@/components/atoms/Chevron";
+import AsideFolderContextProvider from "@/contexts/anchor-folder-context/AsideFolderContextProvider";
 
 type AsideFolderProps = {
     defaultOpen?: boolean;
@@ -37,7 +37,9 @@ function AsideFolder({ defaultOpen = false, name, children }: Readonly<AsideFold
                 id={collapsibleId}
                 className="w-full h-fit ml-2"
                 style={{ display: show ? "block" : "none" }}>
-                {children}
+                <AsideFolderContextProvider setShow={setShow}>
+                    {children}
+                </AsideFolderContextProvider>
             </div>
         </div>
     );

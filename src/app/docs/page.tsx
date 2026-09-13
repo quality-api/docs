@@ -1,27 +1,12 @@
 import { Metadata } from "next";
 import Heading from "@/components/atoms/Heading";
+import SheetPageTemplate from "@/components/templates/SheetPageTemplate";
 
 export const metadata: Metadata = { title: "Introduction" };
 
 function Page() {
     return (
-        <div className="flex flex-col gap-2">
-            <Heading variant="h1">
-                Introduction
-            </Heading>
-
-            <p>
-                Tired of writing Next.js endpoints from simple functions?
-                <br />
-                This lightweight, zero-dependency Next.js API library is designed to make creating endpoints effortless, extensible, and type-safe.
-                <br />
-                Build robust APIs on your logic - not the boring way.
-                <br />
-                Whether you're crafting a simple REST endpoint or a scalable backend, enjoy seamless integration, clean code, and full TypeScript support.
-                <br />
-                Setup once - extend anytime.
-            </p>
-
+        <SheetPageTemplate title="Introduction">
             <Heading variant="h2" hash="what-is-quality-api">
                 What exactly is Quality API?
             </Heading>
@@ -67,7 +52,7 @@ function Page() {
                 <br />
                 The dependencies are what you want them to be.
             </p>
-        </div>
+        </SheetPageTemplate>
     );
 }
 

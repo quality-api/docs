@@ -1,11 +1,11 @@
 "use client";
 
 import PackageManager from "@/types/common/PackageManager";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CliTableButton from "@/components/atoms/CliTableButton";
 import CliTableContextProvider from "@/contexts/cli-table-context/CliTableContextProvider";
-import { IconCopy } from "@tabler/icons-react";
 import CopyButton from "@/components/atoms/CopyButton";
+import s_packageManager from "@/zod-schemas/s_packageManager";
 
 type CliTableProps = {
     commands: Record<PackageManager, string>;
@@ -13,7 +13,24 @@ type CliTableProps = {
 
 function CliTable({ commands }: Readonly<CliTableProps>) {
 
+    const [hasSyncedWithLocalStorage, setHasSyncedWithLocalStorage] = useState<boolean>(false);
     const [packageManager, setPackageManager] = useState<PackageManager>("npm");
+
+    useEffect(() => {
+        const localStorageValue = localStorage.getItem("platform-manager");
+
+        const parseResult = s_packageManager.safeParse(localStorageValue);
+
+        if (parseResult.success) setPackageManager(parseResult.data);
+
+        setHasSyncedWithLocalStorage(true);
+    }, []);
+
+    useEffect(() => {
+        if (!hasSyncedWithLocalStorage) return;
+
+        localStorage.setItem("platform-manager", packageManager);
+    }, [packageManager]);
 
     return (
         <div className="w-full group bg-(--color-dark-8)">
