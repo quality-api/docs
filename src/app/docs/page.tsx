@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Introduction" };
 function Page() {
     return (
         <SheetPageTemplate title="Introduction">
-            <Heading variant="h2" hash="what-is-quality-api">
+            <Heading variant="h2">
                 What exactly is Quality API?
             </Heading>
 
@@ -17,7 +17,7 @@ function Page() {
                 By abstracting away boilerplate code and offering built-in utilities, Quality API helps ensure consistency, reliability, and maintainability in your API layer.
             </p>
 
-            <Heading variant="h2" hash="why-use-quality-api">
+            <Heading variant="h2">
                 Why use Quality API?
             </Heading>
 
