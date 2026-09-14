@@ -39,7 +39,12 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true
-    }
+    },
+    icons: [
+        "/media/logo.svg",
+        "/media/logo.png",
+        "/favicon.ico"
+    ]
 };
 
 function RootLayout({ children }: Readonly<ParentProps>) {
