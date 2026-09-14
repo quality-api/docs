@@ -21,6 +21,10 @@ export const metadata: Metadata = { title: "Quick start" };
 function Page() {
     return (
         <SheetPageTemplate title="Quick start">
+            <Heading variant="h2">
+                Installation
+            </Heading>
+
             <p>To install and setup Quality API, simply run the following command in your command line:</p>
 
             <CliTable

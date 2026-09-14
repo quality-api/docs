@@ -1,38 +1,38 @@
 import { ComponentProps, ElementType } from "react";
 import HashButton from "@/components/atoms/Hash";
 import clsx from "clsx";
+import { headingToHash } from "@/functions/misc.functions";
 
 type Variant =
     "h1" |
     "h2" |
     "h3";
 
+type TextProps = ComponentProps<"p">;
+
 type HeadingProps = {
-    hash?: string | null;
     variant?: Variant;
-} & Omit<ComponentProps<"p">, "id">;
+    children: string;
+} & Omit<Omit<TextProps, "id">, "children">;
 
 function Heading({
-    hash = null,
     variant = "h1",
     className: _className,
     children,
     ...restProps
 }: Readonly<HeadingProps>) {
 
-    const Component = variant as ElementType<ComponentProps<"p">>;
+    const Component = variant as ElementType<TextProps>;
 
-    const className = clsx("flex items-center gap-4 group", {
-        "text-[3rem] font-bold mt-8": variant === "h1",
-        "text-[2rem] font-semibold mt-6": variant === "h2",
-        "text-[1.5rem] font-medium mt-3": variant === "h3"
-    }, _className);
+    const className = clsx("flex items-center gap-4 group", _className);
+
+    const hash = headingToHash(children);
 
     return (
-        <Component id={hash || undefined} className={className} {...restProps}>
+        <Component id={hash} className={className} {...restProps}>
             {children}
 
-            {hash && <HashButton hash={hash} />}
+            <HashButton hash={hash} />
         </Component>
     );
 }

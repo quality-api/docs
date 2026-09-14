@@ -77,10 +77,6 @@
     font-family: Geist;
 }
 
-p {
-    line-height: 1.6;
-}
-
 p code {
     background-color: var(--color-background-light);
     border-radius: 4px;
@@ -118,4 +114,21 @@ details summary {
 ._darken-on-hover:hover,
 ._darken-on-focus:hover {
     color: var(--color-foreground-dark);
+}
+
+
+.__Sheet {
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
 }
