@@ -10,7 +10,7 @@ type DividerProps = {
 function Divider({ color = 5, style, className: _className, ...restProps }: Readonly<DividerProps>) {
 
     const className = clsx(
-        "py-4",
+        "",
         _className
     );
 

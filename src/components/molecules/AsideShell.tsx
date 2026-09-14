@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import ParentProps from "@/types/common/ParentProps";
 import Aside from "@/components/organisms/Aside";
-import Container from "@/components/atoms/Container";
 import Footer from "@/components/organisms/Footer";
 
 type AsideShellProps = {
@@ -17,9 +16,7 @@ function AsideShell({ asideChildren, children }: Readonly<AsideShellProps>) {
 
             <div className="h-full grow flex flex-col overflow-auto">
                 <main className="h-fit grow p-4">
-                    <Container>
-                        {children}
-                    </Container>
+                    {children}
                 </main>
 
                 <Footer />

@@ -34,6 +34,10 @@ export const metadata: Metadata = { title: "Builder pattern" };
 function Page() {
     return (
         <SheetPageTemplate title="Builder pattern">
+            <Heading variant="h2">
+                Why?
+            </Heading>
+
             <p>
                 Quality API follows a half-traditional builder pattern.
                 <br />

@@ -1,8 +1,7 @@
 import ParentProps from "@/types/common/ParentProps";
-import Container from "../atoms/Container";
-import Heading from "../atoms/Heading";
-import Divider from "../atoms/Divider";
 import Sheet from "../atoms/Sheet";
+import PageTemplate from "./PageTemplate";
+import Container from "../atoms/Container";
 
 type SheetPageTemplateProps = {
     title: string;
@@ -10,17 +9,13 @@ type SheetPageTemplateProps = {
 
 function SheetPageTemplate({ title, children }: Readonly<SheetPageTemplateProps>) {
     return (
-        <Container>
-            <Heading>
-                {title}
-            </Heading>
-
-            <Divider />
-
-            <Sheet>
-                {children}
-            </Sheet>
-        </Container>
+        <PageTemplate title={title}>
+            <Container>
+                <Sheet>
+                    {children}
+                </Sheet>
+            </Container>
+        </PageTemplate>
     );
 }
 

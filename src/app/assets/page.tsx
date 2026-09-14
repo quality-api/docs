@@ -1,10 +1,7 @@
-import type { Metadata } from 'next';
-import ComingSoonPage from "@/components/pages/ComingSoonPage";
-
-export const metadata: Metadata = { title: "Coming soon" };
+import { redirect } from 'next/navigation';
 
 function Page() {
-    return <ComingSoonPage />;
+    return redirect("/assets/logo");
 }
 
 export default Page;
